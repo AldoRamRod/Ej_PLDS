@@ -31,7 +31,7 @@
 -- Funciones del banco de pruebas
 -- El banco de pruebas se conecta con el componente a verificar mediante dos tipos
 --      de señales:
--- - Estímulos
+-- - Estímulos --> Valor que antes se otorgaba mediante proceso forzoso
 -- - Respuestas
 -- Sus funciones son la generación de estímulos y el análisis de las respuestas.
 --
@@ -62,7 +62,7 @@ begin
     begin
         asignacion_seniales;
         wait for ...
-        wait;
+        wait;  --> Siempre se debe poner antes del end process, porque si no se traba el simulador
     end process stimuli;
 end TB_arq;
 ------------------------------------------------------------------------------------
